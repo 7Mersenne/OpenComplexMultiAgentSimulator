@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    abstract class ModelBase : IModel
+    abstract class ModelBase
     {
         public ModelEnum MyModelEnum { get; set; }
         public int CurrentStep { get; set; }

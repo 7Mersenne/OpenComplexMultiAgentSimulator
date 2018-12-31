@@ -12,13 +12,13 @@ namespace OpenComplexMultiAgentSimulator
 {
     public partial class SettingForm : Form
     {
-        IModel MyModel;
-        List<IModel> Models;
+        ModelBase MyModel;
+        List<ModelBase> Models;
 
 
         public SettingForm()
         {
-            this.Models = new List<IModel>();
+            this.Models = new List<ModelBase>();
 
             this.InitializeSettingControls();
             this.UserInitializeComponent();
@@ -38,7 +38,7 @@ namespace OpenComplexMultiAgentSimulator
 
         void InitializeSettingControls()
         {
-            IModel model = null;
+            ModelBase model = null;
             foreach (ModelEnum model_enum in Enum.GetValues(typeof(ModelEnum)))
             {
                 switch (model_enum)
