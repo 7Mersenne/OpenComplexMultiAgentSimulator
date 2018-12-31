@@ -9,10 +9,17 @@ namespace OpenComplexMultiAgentSimulator
 {
     abstract class ModelBase : IModel
     {
-        public string ModelName { get; set; } = "";
+        public ModelEnum MyModelEnum { get; set; }
+        public int CurrentStep { get; set; }
+        public int CurrentRound { get; set; }
         public UserControl MyControl { get; set; }
         public Form MyAnimationForm { get; set; }
 
+        public void DisposeGUI()
+        {
+            this.MyControl.Dispose();
+            this.MyAnimationForm.Dispose();
+        }
 
         public virtual void FinalizeRound()
         {
@@ -51,15 +58,15 @@ namespace OpenComplexMultiAgentSimulator
 
         public virtual void InvokeAnimationForm(SettingForm setting_form)
         {
-            this.MyAnimationForm.Show();
+            this.MyAnimationForm.Hide();
             this.MyAnimationForm.Left = setting_form.Right;
         }
 
         public virtual void InvokeSettingControl(SettingForm setting_form)
         {
-            this.MyControl.Dock = DockStyle.Fill;
-            this.MyControl.Visible = true;
             setting_form.Controls.Add(this.MyControl);
+            this.MyControl.Dock = DockStyle.Fill;
+            this.MyControl.Visible = false;
         }
 
         public virtual void NextRound()

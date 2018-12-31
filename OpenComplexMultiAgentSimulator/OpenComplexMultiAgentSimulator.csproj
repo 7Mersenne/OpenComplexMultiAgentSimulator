@@ -103,6 +103,7 @@
     <Compile Include="Model\OpinionSharingModel\GUI\PryymakOpinionSharingModelControl.Designer.cs">
       <DependentUpon>PryymakOpinionSharingModelControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Enum.cs" />
     <EmbeddedResource Include="CommonGUI\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,9 +137,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utility\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\Image\icon_agent.png" />
     <Content Include="Resources\Image\icon_animation.png" />

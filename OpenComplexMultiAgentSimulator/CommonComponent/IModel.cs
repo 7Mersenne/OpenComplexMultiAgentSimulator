@@ -9,13 +9,16 @@ namespace OpenComplexMultiAgentSimulator
 {
     interface IModel
     {
-        string ModelName { get; set; }
+        ModelEnum MyModelEnum { get; set; }
+        int CurrentStep { get; set; }
+        int CurrentRound { get; set; }
         UserControl MyControl { get; set; }
         Form MyAnimationForm { get; set; }
 
         //form
         void InvokeAnimationForm(SettingForm setting_form);
         void InvokeSettingControl(SettingForm setting_form);
+        void DisposeGUI();
 
         //configuration
         void InitializeConfiguration();

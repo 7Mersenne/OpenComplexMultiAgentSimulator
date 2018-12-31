@@ -11,6 +11,7 @@ namespace OpenComplexMultiAgentSimulator
     {
         public PryymakOpinionSharingModel()
         {
+            this.MyModelEnum = ModelEnum.PryymakOpinionSharingModel;
             this.MyControl = new PryymakOpinionSharingModelSettingControl();
             this.MyAnimationForm = new OpinionSharingModelAnimationForm();
         }
