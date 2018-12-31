@@ -77,16 +77,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonComponent\AgentBase.cs" />
     <Compile Include="CommonGUI\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonGUI\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommonComponent\IAgent.cs" />
-    <Compile Include="CommonComponent\IEnvironment.cs" />
-    <Compile Include="CommonComponent\IModel.cs" />
     <Compile Include="CommonComponent\ModelBase.cs" />
+    <Compile Include="CommonComponent\EnvironmentBase.cs" />
     <Compile Include="OpenComplexMAS.cs" />
     <Compile Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.cs">
       <SubType>Form</SubType>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    interface IAgent
+    class AgentBase
     {
         int AgentID { get; set; }
         Vector<double> PosVector { get; set; }

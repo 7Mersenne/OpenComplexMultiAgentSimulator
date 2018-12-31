@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    interface IEnvironment
+    class EnvironmentBase
     {
     }
 }
