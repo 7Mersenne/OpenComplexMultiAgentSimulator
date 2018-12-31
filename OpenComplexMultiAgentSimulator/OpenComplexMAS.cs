@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    static class Program
+    static class OpenComplexMAS
     {
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
@@ -16,7 +16,7 @@ namespace OpenComplexMultiAgentSimulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SettingForm());
         }
     }
 }

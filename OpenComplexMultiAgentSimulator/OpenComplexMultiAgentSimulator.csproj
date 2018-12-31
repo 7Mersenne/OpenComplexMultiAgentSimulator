@@ -5,13 +5,28 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{24ECDFD0-27DA-41CD-A7CC-DD1F0A27A223}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>OpenComplexMultiAgentSimulator</RootNamespace>
     <AssemblyName>OpenComplexMultiAgentSimulator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +47,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.3.5.8\lib\35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SXN.Core, Version=4.1.311.2, Culture=neutral, PublicKeyToken=d330946dddc91495, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.4.1.0311.2\lib\net451\SXN.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Forms.4.0.0.0\lib\System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,18 +69,46 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsForm.Console, Version=1.9.30.1256, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsForm.Console.1.9.30.1256\lib\net462\WindowsForm.Console.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CommonGUI\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CommonGUI\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="CommonComponent\IAgent.cs" />
+    <Compile Include="CommonComponent\IEnvironment.cs" />
+    <Compile Include="CommonComponent\IModel.cs" />
+    <Compile Include="CommonComponent\ModelBase.cs" />
+    <Compile Include="OpenComplexMAS.cs" />
+    <Compile Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.Designer.cs">
+      <DependentUpon>OpinionSharingModelAnimationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CommonGUI\SettingFormEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\OpinionSharingModel\PryymakOpinionSharingModel.cs" />
+    <Compile Include="Model\OpinionSharingModel\GUI\PryymakOpinionSharingModelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\OpinionSharingModel\GUI\PryymakOpinionSharingModelControl.Designer.cs">
+      <DependentUpon>PryymakOpinionSharingModelControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CommonGUI\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.resx">
+      <DependentUpon>OpinionSharingModelAnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +117,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Model\OpinionSharingModel\GUI\PryymakOpinionSharingModelControl.resx">
+      <DependentUpon>PryymakOpinionSharingModelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +135,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Image\icon_agent.png" />
+    <Content Include="Resources\Image\icon_animation.png" />
+    <Content Include="Resources\Image\icon_console.png" />
+    <Content Include="Resources\Image\icon_display.png" />
+    <Content Include="Resources\Image\icon_down.png" />
+    <Content Include="Resources\Image\icon_experiment.png" />
+    <Content Include="Resources\Image\icon_fastforward.png" />
+    <Content Include="Resources\Image\icon_graph.png" />
+    <Content Include="Resources\Image\icon_learning.png" />
+    <Content Include="Resources\Image\icon_left.png" />
+    <Content Include="Resources\Image\icon_log.png" />
+    <Content Include="Resources\Image\icon_menu.png" />
+    <Content Include="Resources\Image\icon_minus.png" />
+    <Content Include="Resources\Image\icon_pause.png" />
+    <Content Include="Resources\Image\icon_play.png" />
+    <Content Include="Resources\Image\icon_playstep.png" />
+    <Content Include="Resources\Image\icon_python.png" />
+    <Content Include="Resources\Image\icon_right.png" />
+    <Content Include="Resources\Image\icon_seedplus.png" />
+    <Content Include="Resources\Image\icon_stop.png" />
+    <Content Include="Resources\Image\icon_up.png" />
+    <Content Include="Resources\Image\icon_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
