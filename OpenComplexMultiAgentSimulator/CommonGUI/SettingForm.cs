@@ -62,13 +62,6 @@ namespace OpenComplexMultiAgentSimulator
 
         }
 
-        void test()
-        {
-            this.MyModel = new PryymakOpinionSharingModel();
-            this.MyModel.InvokeSettingControl(this);
-            this.MyModel.InvokeAnimationForm(this);
-        }
-
         private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (var model in this.Models)

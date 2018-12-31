@@ -18,7 +18,6 @@ namespace OpenComplexMultiAgentSimulator
         //form
         void InvokeAnimationForm(SettingForm setting_form);
         void InvokeSettingControl(SettingForm setting_form);
-        void DisposeGUI();
 
         //configuration
         void InitializeConfiguration();

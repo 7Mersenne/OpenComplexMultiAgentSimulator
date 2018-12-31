@@ -15,12 +15,6 @@ namespace OpenComplexMultiAgentSimulator
         public UserControl MyControl { get; set; }
         public Form MyAnimationForm { get; set; }
 
-        public void DisposeGUI()
-        {
-            this.MyControl.Dispose();
-            this.MyAnimationForm.Dispose();
-        }
-
         public virtual void FinalizeRound()
         {
             throw new NotImplementedException();
