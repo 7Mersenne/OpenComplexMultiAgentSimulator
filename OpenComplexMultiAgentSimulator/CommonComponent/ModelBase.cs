@@ -15,41 +15,7 @@ namespace OpenComplexMultiAgentSimulator
         public UserControl MyControl { get; set; }
         public Form MyAnimationForm { get; set; }
 
-        public virtual void FinalizeRound()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void FinalizeStep()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void InitializeAgents()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void InitializeConfiguration()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void InitializeEnvironments()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void InitializeRound()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void InitializeStep()
-        {
-            throw new NotImplementedException();
-        }
-
+        //form
         public virtual void InvokeAnimationForm(SettingForm setting_form)
         {
             this.MyAnimationForm.Hide();
@@ -63,22 +29,8 @@ namespace OpenComplexMultiAgentSimulator
             this.MyControl.Visible = false;
         }
 
-        public virtual void NextRound()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void NextStep()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void RecordRound()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void RecordStep()
+        //configuration
+        public virtual void InitializeConfiguration()
         {
             throw new NotImplementedException();
         }
@@ -88,7 +40,36 @@ namespace OpenComplexMultiAgentSimulator
             throw new NotImplementedException();
         }
 
-        public virtual void UpdateRounds(int round_count)
+        //agent and environment
+
+        public virtual void InitializeAgents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void InitializeEnvironments()
+        {
+            throw new NotImplementedException();
+        }
+
+        //step
+
+        public virtual void InitializeStep()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void NextStep()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void RecordStep()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void FinalizeStep()
         {
             throw new NotImplementedException();
         }
@@ -97,5 +78,32 @@ namespace OpenComplexMultiAgentSimulator
         {
             throw new NotImplementedException();
         }
+
+        //round
+        public virtual void InitializeRound()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void NextRound()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void RecordRound()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void FinalizeRound()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void UpdateRounds(int round_count)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
