@@ -8,8 +8,11 @@ namespace OpenComplexMultiAgentSimulator
 {
     abstract class GraphGeneratorBase
     {
-        public abstract GraphEnum MyGraphEnum { get; }
-        public abstract bool SeedEnable { get; protected set; }
+        public GraphEnum MyGraphEnum { get; protected set; }
+        public bool SeedEnable { get; protected set; }
+        public int GraphSeed { get; protected set; }
+        public int GraphSize { get; protected set; }
+
         public abstract RawGraph Generate(int graph_seed);
     }
 }
