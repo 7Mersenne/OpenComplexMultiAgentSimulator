@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    class PryymakOpinionSharingModel : ModelBase
+    class PryymakOpinionSharingModel : OsmModelBase
     {
         public PryymakOpinionSharingModel()
         {

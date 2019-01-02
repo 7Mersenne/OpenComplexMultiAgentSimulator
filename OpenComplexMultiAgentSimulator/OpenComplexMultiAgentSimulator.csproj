@@ -77,6 +77,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GraphGeneratorBase.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\AgentLink.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\AgentNetwork.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\AggregationFunctions.cs" />
     <Compile Include="CommonComponent\AgentBase.cs" />
     <Compile Include="CommonGUI\SettingForm.cs">
       <SubType>Form</SubType>
@@ -85,14 +89,20 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonComponent\ModelBase.cs" />
-    <Compile Include="CommonComponent\EnvironmentBase.cs" />
-    <Compile Include="OpenComplexMAS.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\InitBeliefGenerator.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\Layout.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\Message.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OpenComplexMAS.cs" />
     <Compile Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Model\OpinionSharingModel\GUI\OpinionSharingModelAnimationForm.Designer.cs">
       <DependentUpon>OpinionSharingModelAnimationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OsmAgent.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OsmModelBase.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OpinionSubject.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OpinionEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommonGUI\SettingFormEvent.cs">
       <SubType>Form</SubType>
@@ -104,6 +114,13 @@
     <Compile Include="Model\OpinionSharingModel\GUI\PryymakOpinionSharingModelControl.Designer.cs">
       <DependentUpon>PryymakOpinionSharingModelControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\OsmConfig.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\ExtendRandom.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\RawGraph.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\RecordRound.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\SampleAgent.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\SensorGenerator.cs" />
+    <Compile Include="Model\OpinionSharingModel\ModelComponent\SubjectManager.cs" />
     <Compile Include="Utility\Enum.cs" />
     <EmbeddedResource Include="CommonGUI\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>

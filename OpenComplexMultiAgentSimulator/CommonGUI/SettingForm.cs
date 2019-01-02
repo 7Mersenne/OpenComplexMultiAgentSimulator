@@ -58,7 +58,7 @@ namespace OpenComplexMultiAgentSimulator
 
         void InitializeProperty()
         {
-
+            this.Models.First().UpdateRounds(300, 3000);
 
         }
 

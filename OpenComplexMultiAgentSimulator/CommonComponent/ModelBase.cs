@@ -29,30 +29,37 @@ namespace OpenComplexMultiAgentSimulator
             this.MyControl.Visible = false;
         }
 
-        //configuration
-        public virtual void InitializeConfiguration()
+        //config
+        public virtual void InitializeConfig()
         {
             throw new NotImplementedException();
         }
 
-        public virtual void RegisterConfiguration()
+        public virtual void ApplyConfigToModel()
+        {
+
+        }
+
+        public virtual void ImportConfigJson()
         {
             throw new NotImplementedException();
         }
 
-        //agent and environment
-
-        public virtual void InitializeAgents()
+        public virtual void ExportConfigJson()
         {
-            throw new NotImplementedException();
+
         }
 
-        public virtual void InitializeEnvironments()
+        public virtual void CopyConfig()
         {
-            throw new NotImplementedException();
+
         }
 
         //step
+        public virtual void InitializeToFirstStep()
+        {
+
+        }
 
         public virtual void InitializeStep()
         {
@@ -76,16 +83,27 @@ namespace OpenComplexMultiAgentSimulator
 
         public virtual void UpdateSteps(int step_count)
         {
-            throw new NotImplementedException();
+            foreach (var step in Enumerable.Range(0, step_count))
+            {
+                this.InitializeStep();
+                this.NextStep();
+                this.RecordStep();
+                this.FinalizeStep();
+            }
         }
 
         //round
+        public virtual void InitializeToFirstRound()
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual void InitializeRound()
         {
             throw new NotImplementedException();
         }
 
-        public virtual void NextRound()
+        public virtual void NextRound(int step_count)
         {
             throw new NotImplementedException();
         }
@@ -100,9 +118,15 @@ namespace OpenComplexMultiAgentSimulator
             throw new NotImplementedException();
         }
 
-        public virtual void UpdateRounds(int round_count)
+        public virtual void UpdateRounds(int round_count, int step_count)
         {
-            throw new NotImplementedException();
+            foreach (var round in Enumerable.Range(0, round_count))
+            {
+                this.InitializeRound();
+                this.NextRound(step_count);
+                this.RecordRound();
+                this.FinalizeRound();
+            }
         }
 
     }

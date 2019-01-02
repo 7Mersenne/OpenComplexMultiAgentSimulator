@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OpenComplexMultiAgentSimulator
 {
-    class AgentBase
+    abstract class AgentBase
     {
-        int AgentID { get; set; }
-        Vector<double> PosVector { get; set; }
+        public int AgentID { get; set; }
+        public Vector<double> Position { get; set; }
     }
 }
