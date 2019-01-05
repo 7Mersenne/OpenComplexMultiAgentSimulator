@@ -25,6 +25,7 @@ namespace OpenComplexMultiAgentSimulator
             if (this.NearestNeighbors >= this.GraphSize) throw new Exception("choose smaller k or large n");
 
             var g = new RawGraph();
+            return g;
         }
     }
 }
